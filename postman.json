@@ -1,0 +1,223 @@
+{
+	"info": {
+		"_postman_id": "69e7f8d1-7b87-425d-96d5-091234e7637c",
+		"name": "JsonRpcFilters",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Apply Filter (GStreamer)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"sessionId\": \"TestSession\",\n\t\"streamId\": \"exyoujh3l7wlhrru_CAMERA_SVTZP\",\n\t\"type\": \"GStreamerFilter\",\n    \"options\": \"{\\\"command\\\": \\\"videobalance saturation=0.0\\\"}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/apply-filter",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apply-filter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Apply Filter (ZBar)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"sessionId\": \"TestSession\",\n\t\"streamId\": \"exyoujh3l7wlhrru_CAMERA_SVTZP\",\n\t\"type\": \"ZBarFilter\",\n\t\"options\": \"{}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/apply-filter",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apply-filter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Filter",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"sessionId\": \"TestSession\",\n\t\"streamId\": \"exyoujh3l7wlhrru_CAMERA_SVTZP\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/remove-filter",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"remove-filter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Exec Filter Method (GStreamer)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"sessionId\": \"TestSession\",\n\t\"streamId\": \"exyoujh3l7wlhrru_CAMERA_SVTZP\",\n\t\"method\": \"setElementProperty\",\n\t\"params\": \"{\\\"propertyName\\\":\\\"saturation\\\",\\\"propertyValue\\\":\\\"1.0\\\"}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/exec-filter-method",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"exec-filter-method"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Filter Event Listener (CodeFound)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"sessionId\": \"TestSession\",\n\t\"streamId\": \"exyoujh3l7wlhrru_CAMERA_SVTZP\",\n\t\"eventType\": \"CodeFound\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/add-filter-event-listener",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"add-filter-event-listener"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Filter Event Listener (CodeFound)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"sessionId\": \"TestSession\",\n\t\"streamId\": \"exyoujh3l7wlhrru_CAMERA_SVTZP\",\n\t\"eventType\": \"CodeFound\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/remove-filter-event-listener",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"remove-filter-event-listener"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "cda1581c-8dc0-4bd4-8121-0b8173a31dee",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "fb35c283-6914-4b1a-b067-2d2127d6fe4b",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
